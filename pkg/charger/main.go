@@ -3,7 +3,6 @@ package charger
 import (
 	"bufio"
 	"encoding/binary"
-	"encoding/hex"
 	"encoding/json"
 	"errors"
 	"log"
@@ -75,7 +74,7 @@ func (c *Charger) readData() {
 			}
 		}
 		// FIXME: using proper logging debug
-		log.Println("read", hex.EncodeToString(buf))
+		// log.Println("read", hex.EncodeToString(buf))
 		data, err := c.parseData(buf)
 		if err != nil {
 			c.handleError(err)
